@@ -1,12 +1,15 @@
 <?php
 
 
-$number = rand(0, 100);
 
 
 
-function devineMonChiffre($vie, $number)
+
+function devineMonChiffre($vie, $min, $max)
 {
+
+    $number = rand($min, $max);
+
     $keypress = -1;
 
     while ( $vie > -1 && $keypress !== $number)
@@ -41,5 +44,5 @@ function devineMonChiffre($vie, $number)
 
 
 
-   devineMonChiffre($argv[1], $number);
+   devineMonChiffre($argv[1],$argv[2],$argv[3]);
 ?>
