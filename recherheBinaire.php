@@ -18,13 +18,13 @@ function binarySearch($argv, $parsed_json)
     $milieu2 = intval($milieu);
     $tableau = $parsed_json;
     $step = 0;
-    $bidule = 0 ;
+    $default = 0 ;
   
 
-    while($bidule == 0 && $min<$max ){    
+    while($default == 0 && $min<$max ){    
 
        if($argv == $parsed_json[$milieu2]->{'name'}){
-        $bidule == 1;
+        $default == 1;
         break;
        }else if ($argv < $parsed_json[$milieu2]->{'name'}){
         $max = $milieu2 - 1;
@@ -45,26 +45,15 @@ function binarySearch($argv, $parsed_json)
         echo PHP_EOL;
         echo $step;
         echo PHP_EOL;
-        echo 'gagné';
-    }else{
-        echo 'perdu';
-    }
    
+    }else{
+        echo 'ERREUR: Merci de rentrer un autre nom';
+    }
 
 
 
 
 
-    //var_dump($max);
-  // var_dump($parsed_json[1] -> {'name'});
 }
-
-// $a = "a";
-// $b = "b";
-// if($a>$b){
-//     echo 'true';
-// }else{
-//     echo 'false';
-// }
 
 binarySearch($argv[1], $parsed_json);
